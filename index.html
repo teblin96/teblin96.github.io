@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: #0f1115;
+      overflow-x: hidden;
+    }
+
+    .project-card {
+      transition: all 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-image {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .hidden-site {
+      display: none;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+
+  <!-- PASSWORD SCREEN -->
+  <div id="loginScreen" class="min-h-screen flex items-center justify-center px-4">
+    <div class="w-full max-w-md bg-[#171a21] rounded-2xl p-8 shadow-2xl border border-[#252934]">
+
+      <h1 class="text-3xl font-bold mb-2 text-center">
+        Private Portfolio
+      </h1>
+
+      <p class="text-gray-400 text-center mb-8">
+        Access protected by password
+      </p>
+
+      <input
+        id="passwordInput"
+        type="password"
+        placeholder="Enter password"
+        class="w-full bg-[#0f1115] border border-[#2f3542] rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition"
+      />
+
+      <button
+        onclick="checkPassword()"
+        class="w-full mt-4 bg-blue-600 hover:bg-blue-500 transition rounded-xl py-3 font-semibold"
+      >
+        Enter
+      </button>
+
+      <p id="errorText" class="text-red-400 text-sm mt-4 hidden">
+        Wrong password
+      </p>
+    </div>
+  </div>
+
+
+  <!-- MAIN SITE -->
+  <div id="siteContent" class="hidden-site">
+
+    <!-- HEADER -->
+    <header class="border-b border-[#1f232c] sticky top-0 backdrop-blur bg-[#0f1115cc] z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <div>
+          <h1 class="text-2xl font-bold">Viktor Portfolio</h1>
+          <p class="text-sm text-gray-400">Vehicle / Hard Surface Artist</p>
+        </div>
+
+        <nav class="flex gap-6 text-sm text-gray-300">
+          <a href="#projects" class="hover:text-white">Projects</a>
+          <a href="#about" class="hover:text-white">About</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </nav>
+
+      </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="max-w-7xl mx-auto px-6 pt-16 pb-10">
+      <div class="rounded-3xl overflow-hidden relative h-[420px] bg-[#171a21] border border-[#232733]">
+
+        <img
+          src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000&auto=format&fit=crop"
+          class="absolute inset-0 w-full h-full object-cover opacity-40"
+        />
+
+        <div class="relative z-10 h-full flex items-end p-10">
+          <div>
+            <p class="uppercase text-sm tracking-[0.2em] text-gray-300 mb-3">
+              NDA Portfolio
+            </p>
+
+            <h2 class="text-5xl font-bold max-w-3xl leading-tight">
+              Real-time vehicle art and hard surface assets for games
+            </h2>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-10">
+
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-3xl font-bold">Projects</h2>
+
+        <div class="flex gap-3 text-sm">
+          <button class="bg-[#1b1f27] px-4 py-2 rounded-xl hover:bg-[#262b36] transition">
+            Vehicles
+          </button>
+
+          <button class="bg-[#1b1f27] px-4 py-2 rounded-xl hover:bg-[#262b36] transition">
+            Props
+          </button>
+
+          <button class="bg-[#1b1f27] px-4 py-2 rounded-xl hover:bg-[#262b36] transition">
+            WIP
+          </button>
+        </div>
+      </div>
+
+
+      <!-- GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+
+        <!-- CARD -->
+        <a href="project_1.html" class="project-card group block bg-[#171a21] rounded-2xl overflow-hidden border border-[#232733]">
+
+          <img
+            src="https://images.unsplash.com/photo-1518306727298-4c17e1bf6942?q=80&w=1200&auto=format&fit=crop"
+            class="project-image w-full group-hover:scale-105 transition duration-300"
+          />
+
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-semibold">Heavy Tank</h3>
+              <span class="text-xs text-gray-400">2026</span>
+            </div>
+
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Game-ready armored vehicle with custom materials and optimization.
+            </p>
+
+            <div class="flex gap-2 mt-4 flex-wrap">
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">Maya</span>
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">Substance</span>
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">UE5</span>
+            </div>
+          </div>
+        </a>
+
+
+        <!-- CARD -->
+        <a href="project_2.html" class="project-card group block bg-[#171a21] rounded-2xl overflow-hidden border border-[#232733]">
+
+          <img
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop"
+            class="project-image w-full group-hover:scale-105 transition duration-300"
+          />
+
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-semibold">Sci-Fi APC</h3>
+              <span class="text-xs text-gray-400">2026</span>
+            </div>
+
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Modular hard surface workflow with layered wear materials.
+            </p>
+
+            <div class="flex gap-2 mt-4 flex-wrap">
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">Blender</span>
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">Painter</span>
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">Marmoset</span>
+            </div>
+          </div>
+        </a>
+
+
+        <!-- CARD -->
+        <a href="project_3.html" class="project-card group block bg-[#171a21] rounded-2xl overflow-hidden border border-[#232733]">
+
+          <img
+            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop"
+            class="project-image w-full group-hover:scale-105 transition duration-300"
+          />
+
+          <div class="p-5">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-semibold">Military Truck</h3>
+              <span class="text-xs text-gray-400">2025</span>
+            </div>
+
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Optimized vehicle asset with PBR workflow and custom decals.
+            </p>
+
+            <div class="flex gap-2 mt-4 flex-wrap">
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">Maya</span>
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">Designer</span>
+              <span class="bg-[#222733] text-xs px-3 py-1 rounded-full">UE5</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-20">
+      <div class="bg-[#171a21] border border-[#232733] rounded-3xl p-10">
+
+        <h2 class="text-3xl font-bold mb-6">About</h2>
+
+        <p class="text-gray-300 leading-relaxed text-lg">
+          3D vehicle artist focused on game-ready hard surface assets, optimization, materials, and realistic workflows for real-time engines.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-5xl mx-auto px-6 pb-24">
+      <div class="bg-[#171a21] border border-[#232733] rounded-3xl p-10">
+
+        <h2 class="text-3xl font-bold mb-6">Contact</h2>
+
+        <div class="space-y-3 text-gray-300">
+          <p>Email: yourmail@email.com</p>
+          <p>ArtStation: artstation.com/yourname</p>
+          <p>Discord: yourdiscord</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+
+  <script>
+    const PASSWORD = "c";
+
+    function unlockSite() {
+      document.getElementById("loginScreen").style.display = "none";
+      document.getElementById("siteContent").style.display = "block";
+    }
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+
+      if (input === PASSWORD) {
+        localStorage.setItem("portfolioAuth", "true");
+        unlockSite();
+      } else {
+        document.getElementById("errorText").classList.remove("hidden");
+      }
+    }
+
+    if (localStorage.getItem("portfolioAuth") === "true") {
+      unlockSite();
+    }
+  </script>
+
+</body>
+</html>
